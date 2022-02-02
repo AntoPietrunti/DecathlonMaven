@@ -94,7 +94,7 @@ jobs:
         run: mvn spotbugs:check
   
   if: github.event_name == 'release' && (github.event.action == 'published')
-  spotbugs:
+  spotbugs1:
 
     runs-on: ubuntu-latest
 
