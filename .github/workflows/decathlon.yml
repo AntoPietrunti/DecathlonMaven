@@ -39,8 +39,6 @@ jobs:
       - name: Build and test with Maven for ${{ matrix.os}} and Java ${{ matrix.java }}
         run: |
           mvn -B package --file pom.xml
-          mvn test
-          ls
 
   checkstyle:
 
@@ -93,12 +91,11 @@ jobs:
       - name: Spotbugs with Maven
         run: mvn spotbugs:check
   
-  if: github.event_name == 'release' && (github.event.action == 'published')
-  spotbugs1:
+  release:
 
     runs-on: ubuntu-latest
 
-    needs: build
+    needs: [ build, checkstyle, PMD, spotbugs ]
 
     steps:
       - uses: actions/checkout@v2
