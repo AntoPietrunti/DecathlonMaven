@@ -120,7 +120,7 @@ jobs:
       - name: Prepare upload
         shell: bash
         run: |
-          cp ./target/main-0.0.1.jar ./decathlon-java-${{ matrix.java }}.jar      
+          cp ./target/decathlon-${{ github.event.release.tag_name }}.jar ./decathlon-java-${{ matrix.java }}.jar      
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:

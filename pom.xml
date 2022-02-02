@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>it.unimol.DecathlonMaven</groupId>
-    <artifactId>main</artifactId>
+    <artifactId>decathlon</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.1</version>
+    <version>v0.0.2</version>
     <name>decathlon</name>
 
 

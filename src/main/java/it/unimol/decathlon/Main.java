@@ -1,14 +1,17 @@
 package it.unimol.decathlon;
-
+/*
 import it.unimol.decathlon.app.Decathlon;
 import it.unimol.decathlon.gui.DecathlonFrame;
 import it.unimol.decathlon.gui.NewPlayerFrame;
 
+
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
+*/
+import it.unimol.decathlon.ui.DecathlonUI;
 
 public class Main {
-
+/*
     public static void main(String[] args) {
         Decathlon decathlon = null;
         try (FileInputStream fileIn = new FileInputStream("decathlon.ser");
@@ -21,5 +24,12 @@ public class Main {
             NewPlayerFrame frame = new NewPlayerFrame(decathlon);
             frame.setVisible(true);
         }
+    }
+    */
+
+    public static void main(String[] args) {
+        DecathlonUI decathlonUI = new DecathlonUI();
+        decathlonUI.showMainScreen();
+        decathlonUI.startGame();
     }
 }
