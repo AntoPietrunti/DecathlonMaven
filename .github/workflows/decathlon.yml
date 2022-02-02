@@ -96,7 +96,10 @@ jobs:
     runs-on: ubuntu-latest
 
     needs: [ build, checkstyle, PMD, spotbugs ]
+    matrix:
+      java: [ 11, 17 ]
 
+    if: github.event_name == 'release' && (github.event.action == 'published')
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 17
