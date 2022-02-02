@@ -23,6 +23,7 @@
 hs_err_pid*
 
 /out/
+/target/
 
 # Metadata for VSCode
 .vscode
