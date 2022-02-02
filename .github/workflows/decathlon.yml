@@ -5,11 +5,11 @@ name: Decathlon CI Matrix
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master]
+    branches: [ main]
   release:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
 
