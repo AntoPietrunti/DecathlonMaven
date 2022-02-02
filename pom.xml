@@ -7,9 +7,8 @@
     <groupId>it.unimol.DecathlonMaven</groupId>
     <artifactId>main</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
-
-    <name>main</name>
+    <version>0.0.1</version>
+    <name>decathlon</name>
 
 
     <properties>
