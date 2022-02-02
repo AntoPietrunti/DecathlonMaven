@@ -115,24 +115,3 @@ jobs:
           echo "Java version: ${{ matrix.java }}"
           java --version
           mvn --version
-      - name: Build and test with Maven for ${{ matrix.os}} and Java ${{ matrix.java }}
-        run: mvn -B package --file pom.xml
-      - name: Prepare upload
-        shell: bash
-        run: |
-          cp ./target/main-0.0.1.jar ./decathlon-java-${{ matrix.java }}.jar      
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          path: ./decathlon-java-${{ matrix.java }}.jar
-          name: decathlon-java-${{ matrix.java }}
-      - name: Release
-        if: github.event_name == 'release' && (github.event.action == 'published')
-        uses: actions/upload-release-asset@v1
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-            upload_url: ${{ github.event.release.upload_url }}
-            asset_path: ./decathlon-java-${{ matrix.java }}.jar
-            asset_name: decathlon-java-${{ matrix.java }}.jar
-            asset_content_type: application/jar
