@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+    decathlon:
+     stdin_open: true
+     tty: true       
+     
+     build: ./
+     
